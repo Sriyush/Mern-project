@@ -7,10 +7,10 @@
   font-family: 'Outfit', sans-serif;
 }
 :root {
-  --bg-color: #fff; /* Shared background color */
+  --bg-color: #fff;
   --text-color: #000;
   --icon-color: #000;
-  --icon-bgcolor: #fff ;/* Shared text color */
+  --icon-bgcolor: #fff ;
 }
 .theme.dark {
   --bg-color: #000;
