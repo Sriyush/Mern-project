@@ -28,9 +28,9 @@ export const Navbar = () => {
   
     if (newMode === 'light') {
       document.documentElement.style.setProperty('--bg-color', '#fff');
-      document.documentElement.style.setProperty('--text-color', '#333');
+      document.documentElement.style.setProperty('--text-color', '#000');
     } else {
-      document.documentElement.style.setProperty('--bg-color', '#333');
+      document.documentElement.style.setProperty('--bg-color', '#000');
       document.documentElement.style.setProperty('--text-color', '#fff');
     }
     
