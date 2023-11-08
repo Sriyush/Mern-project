@@ -44,7 +44,7 @@ export const Navbar = () => {
   return (
     <div className={color ? "header header-bg" : "header"}>
       <Link to="/">
-        <h1>Randz</h1>
+        <h1>SOSH</h1>
       </Link>
 
       <ul className={click ? "nav-menu active" : "nav-menu"}>

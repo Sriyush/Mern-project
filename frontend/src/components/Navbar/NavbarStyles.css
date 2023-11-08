@@ -65,6 +65,9 @@ transition: 0.5s;
         transition: 0.3s;
 
     }
+    .icon{
+        background-color: #000;
+    }
     .nav-menu.active{
         left: 0;
     }

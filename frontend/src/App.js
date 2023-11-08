@@ -1,4 +1,4 @@
-import React,{ useState } from "react";
+import React,{ useEffect, useState } from "react";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from './components/Navbar/Navbar';
@@ -18,7 +18,9 @@ function Profile() {
 
 function App() {
   const [darkTheme, setDarkTheme] = useState(false);
-
+  useEffect(()=>{
+    document.title="SOSH";
+  }, []);
   const toggleTheme = () => {
     setDarkTheme(!darkTheme);
     document.body.classList.toggle("dark", darkTheme);
