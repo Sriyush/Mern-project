@@ -29,9 +29,13 @@ export const Navbar = () => {
     if (newMode === 'light') {
       document.documentElement.style.setProperty('--bg-color', '#fff');
       document.documentElement.style.setProperty('--text-color', '#000');
+      document.documentElement.style.setProperty('--icon-color', '#000');
+      document.documentElement.style.setProperty('--bg-color-light', '#fff');
     } else {
       document.documentElement.style.setProperty('--bg-color', '#000');
       document.documentElement.style.setProperty('--text-color', '#fff');
+      document.documentElement.style.setProperty('--icon-color', '#fff');
+      document.documentElement.style.setProperty('--bg-color-light', '#000');
     }
     
     document.body.classList.toggle('light-theme', newMode === 'light');
@@ -68,9 +72,9 @@ export const Navbar = () => {
 
       <div className="hamburger" onClick={handleClick}>
         {click ? (
-          <FaTimes size={20} style={{ color: "#fff" }} />
+          <FaTimes size={20} />
         ) : (
-          <FaBars size={20} style={{ color: "#fff" }} />
+          <FaBars size={20} />
         )}
       </div>
     </div>
