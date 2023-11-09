@@ -8,8 +8,8 @@ const UserCard = () => {
         <div id="title">Ayush Srivastava</div>
         <div id ="subtitle">Sriyush</div>
         <div id="stats">
-            <div className="stat-num">1000</div>
-            <div className="stat-type">follower</div>
+            <div class="stat-num">1000</div>
+            <div class="stat-type">follower</div>
         </div>
         <div id ="actions">Pdf file</div>
     </div>

@@ -8,10 +8,12 @@
 }
 .cardStyle{
   background-color: var(--bg-color);
-  border-radius: 8px;
   padding: 16px;
-  box-shadow: 2px 2px 2px 4px rgba(89, 83, 83, 0.1);
+  box-shadow: 1px 1px 1px 1px var(--text-color) ;
   text-align: center;
+  /* border-color: var(--text-color); */
+  border-radius: 20px;
+  border-width: 10px;
 }
 #title{
   font-weight:700;
@@ -20,9 +22,25 @@
 }
 #subtitle{
   font-size: small;
+  margin-top: 3px;
+}
+#stats{
+  display: flex;
+  justify-content:center ;
+  margin-top: 5px;
+}
+.stat-num{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stat-type{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .img{
-  height: 40px;
+  height: 50px;
   border-radius: 50%; /* Adjust the height as needed */
   margin: 0 auto; /* Center the image */
   border: 2px solid #ddd;
