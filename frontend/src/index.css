@@ -6,6 +6,27 @@
   padding: 0;
   font-family: 'Outfit', sans-serif;
 }
+.cardStyle{
+  background-color: var(--bg-color);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 2px 2px 2px 4px rgba(89, 83, 83, 0.1);
+  text-align: center;
+}
+#title{
+  font-weight:700;
+  margin-top: 10px;
+  font-size:large;
+}
+#subtitle{
+  font-size: small;
+}
+.img{
+  height: 40px;
+  border-radius: 50%; /* Adjust the height as needed */
+  margin: 0 auto; /* Center the image */
+  border: 2px solid #ddd;
+}
 :root {
   --bg-color: #fff;
   --text-color: #000;

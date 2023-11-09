@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import { Navbar } from "../components/Navbar/Navbar";
+import UserCard from "../UserCard";
 const HomePage = ({ darkTheme, setDarkTheme }) => {
   const toggleTheme = () => {
     setDarkTheme(!darkTheme);
@@ -10,7 +11,7 @@ const HomePage = ({ darkTheme, setDarkTheme }) => {
       <Navbar toggleTheme={toggleTheme} />
       <Box display="flex"
       flexDirection="column"
-      alignItems="center"
+      alignItems="flex-start"
       justifyContent="space-between"
       as="main"
       px={5}
@@ -18,7 +19,7 @@ const HomePage = ({ darkTheme, setDarkTheme }) => {
       width={1}
       mt={10}
       bg="muted"> 
-        <h1>Nigga marda nigga marda</h1>
+        <UserCard/>
       </Box>
     </Box>
   );
