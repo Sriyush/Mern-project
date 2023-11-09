@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from './components/Navbar/Navbar';
-import UserWidget from "./components/widgets/Usercard";
 import HomePage from "./HomePage/Home";
 
 
