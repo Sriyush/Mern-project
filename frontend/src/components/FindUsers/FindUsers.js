@@ -4,38 +4,20 @@ import SearchBar from '../widgets/Search';
 import { Box } from "@mui/material";
 import { Navbar } from '../Navbar/Navbar';
 import FollowCard from '../widgets/FollowCard';
-
+import userdata from '../widgets/userdata.json'
 const Users = ({ darkTheme, setDarkTheme }) => {
-  const [searchTerm, setSearchTerm] = useState('');
-
+  const [setSearchTerm] = useState('');
   const handleSearch = (term) => {
     setSearchTerm(term);
   };
+  
 
   const toggleTheme = () => {
     setDarkTheme(!darkTheme);
     document.body.classList.toggle("dark", darkTheme);
   };
 
-  const userData1 = {
-    avatarUrl: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
-    title: "Ayush Srivastava",
-    subtitle: "@Sriyush",
-    posts: 5,
-    followers: 1000,
-    following: 100000,
-    description: "A guy who is just a Guy",
-  };
 
-  const userData2 = {
-    avatarUrl: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
-    title: "Shiv Nigger",
-    subtitle: "@Shivrand",
-    posts: 5,
-    followers: 1000,
-    following: 100000,
-    description: "A guy who is just a Gay",
-  };
 
   return (
     <Box>
@@ -54,6 +36,9 @@ const Users = ({ darkTheme, setDarkTheme }) => {
       >
         <SearchBar onSearch={handleSearch} />
       </Box>
+      <Box>
+      <h1>Top Users</h1>
+      </Box>
       <Box
         display="flex"
         flexDirection="row"
@@ -62,11 +47,12 @@ const Users = ({ darkTheme, setDarkTheme }) => {
         px={5}
         py={3}
         width={1}
-        mt={10}
+        mt={5} 
         bg="muted"
       >
-        <FollowCard {...userData1} />
-        <FollowCard {...userData2} />
+        {userdata.map((user, index) => (
+          <FollowCard key={index} {...user} />
+        ))}
       </Box>
     </Box>
   );
