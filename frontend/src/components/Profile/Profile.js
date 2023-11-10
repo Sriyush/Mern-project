@@ -7,7 +7,9 @@ const ProfilePage = ({ darkTheme, setDarkTheme }) => {
     document.body.classList.toggle("dark", darkTheme);
   };
   return (
-    <Box>
+    <Box display="flex"
+    flexDirection="row"
+    >
       <Navbar toggleTheme={toggleTheme} />
       <Box display="flex"
       flexDirection="column"
@@ -20,6 +22,17 @@ const ProfilePage = ({ darkTheme, setDarkTheme }) => {
       mt={10}
       bg="muted"> 
         <UserCard/>
+      </Box>
+      <Box display="flex"
+      flexDirection="column"
+      justifyContent="space-between"
+      as="main"
+      px={5}
+      py={3}
+      width={1}
+      mt={10}
+      bg="muted">
+        <h1>Your Posts</h1>
       </Box>
     </Box>
   );
