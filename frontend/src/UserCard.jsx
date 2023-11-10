@@ -10,7 +10,7 @@ const UserCard = () => {
             <img src={url} alt="avatar" class="img" />
         </div>
         <div id="title">Ayush Srivastava</div>
-        <div id ="subtitle">Sriyush</div>
+        <div id ="subtitle">@Sriyush</div>
         <div id="stats">
         <div class="posts">
             <div class="stat-num">5</div>
