@@ -2,14 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from './components/Navbar/Navbar';
-import HomePage from "./HomePage/Home";
+import HomePage from "./components/HomePage/Home";
 import ProfilePage from "./components/Profile/Profile";
+import Users from "./components/FindUsers/FindUsers";
 
-
-
-function Users() {
-  return <div></div>;
-}
 
 
 function App() {
@@ -30,7 +26,7 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/" element={<HomePage darkTheme={darkTheme} setDarkTheme={setDarkTheme} />} />
-            <Route path="users" element={<Users/>} />
+            <Route path="users" element={<Users darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>} />
             <Route path="profile" element={<ProfilePage darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>} />
           </Routes>
         </div>

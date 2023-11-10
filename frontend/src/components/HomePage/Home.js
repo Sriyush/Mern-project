@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import { Navbar } from "../components/Navbar/Navbar";
-import UserCard from "../UserCard";
+import { Navbar } from "../Navbar/Navbar";
+import UserCard from "../widgets/UserCard";
 const HomePage = ({ darkTheme, setDarkTheme }) => {
   const toggleTheme = () => {
     setDarkTheme(!darkTheme);
