@@ -34,8 +34,12 @@ const UserCard = () => {
                 <div style={{ flex: 1, backgroundColor: "#6F38C5", height: "3px" }} />
         </div>
         <div style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}>
+        <a href="https://twitter.com/Sriyush1">
         <AiOutlineTwitter style={{ fontSize: "20px", margin: "0 10px" }} />
+        </a>
+        <a href="https://www.instagram.com/sriyush_/">
         <AiFillInstagram style={{ fontSize: "20px", margin: "0 10px" }} />
+        </a>
       </div>
     </div>
 }
