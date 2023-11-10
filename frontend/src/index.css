@@ -96,3 +96,9 @@ ul {
   transition: 0.3s;
   background: rgba(255,255, 255, 0.2);
 } */
+@media screen and (max-width: 1040px) {
+.cardStyle{
+  width: 80%;
+  margin: 0 auto;
+}
+}
