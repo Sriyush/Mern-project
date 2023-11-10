@@ -3,16 +3,14 @@ import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from './components/Navbar/Navbar';
 import HomePage from "./HomePage/Home";
+import ProfilePage from "./components/Profile/Profile";
 
 
 
-function Posts() {
+function Users() {
   return <div></div>;
 }
 
-function Profile() {
-  return <div></div>;
-}
 
 function App() {
   const [darkTheme, setDarkTheme] = useState(false);
@@ -32,8 +30,8 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/" element={<HomePage darkTheme={darkTheme} setDarkTheme={setDarkTheme} />} />
-            <Route path="posts" element={<Posts />} />
-            <Route path="profile" element={<Profile />} />
+            <Route path="users" element={<Users/>} />
+            <Route path="profile" element={<ProfilePage darkTheme={darkTheme} setDarkTheme={setDarkTheme}/>} />
           </Routes>
         </div>
       </div>

@@ -57,7 +57,7 @@ export const Navbar = () => {
         </li>
 
         <li>
-          <Link to="/posts">Your posts</Link>
+          <Link to="/users">Find Users</Link>
         </li>
 
         <li>
