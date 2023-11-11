@@ -9,6 +9,11 @@ const ProfilePage = ({ darkTheme, setDarkTheme }) => {
   return (
     <Box display="flex"
     flexDirection="row"
+    sx={{
+      '@media screen and (max-width: 1040px)': {
+        flexDirection: 'column',
+      },
+    }}
     >
       <Navbar toggleTheme={toggleTheme} />
       <Box display="flex"
@@ -27,11 +32,17 @@ const ProfilePage = ({ darkTheme, setDarkTheme }) => {
       flexDirection="column"
       justifyContent="space-between"
       as="main"
-      px={5}
+      px={6}
       py={3}
       width={1}
       mt={10}
-      bg="muted">
+      bg="muted"
+      sx={{
+        '@media screen and (max-width: 1040px)': {
+          mt: 3,
+        },
+      }}
+      >
         <h1>Your Posts</h1>
       </Box>
     </Box>

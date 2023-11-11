@@ -5,6 +5,7 @@ import { Box } from "@mui/material";
 import { Navbar } from '../Navbar/Navbar';
 import FollowCard from '../widgets/FollowCard';
 import userdata from '../widgets/userdata.json'
+import './FindUsers.css'
 const Users = ({ darkTheme, setDarkTheme }) => {
   const [setSearchTerm] = useState('');
   const handleSearch = (term) => {
@@ -16,8 +17,6 @@ const Users = ({ darkTheme, setDarkTheme }) => {
     setDarkTheme(!darkTheme);
     document.body.classList.toggle("dark", darkTheme);
   };
-
-
 
   return (
     <Box>
@@ -34,9 +33,11 @@ const Users = ({ darkTheme, setDarkTheme }) => {
         mt={10}
         bg="muted"
       >
-        <SearchBar onSearch={handleSearch} />
+        <SearchBar />
       </Box>
-      <Box>
+      <Box
+      className="heading"
+      >
       <h1>Top Users</h1>
       </Box>
       <Box
@@ -49,9 +50,12 @@ const Users = ({ darkTheme, setDarkTheme }) => {
         width={1}
         mt={5} 
         bg="muted"
+        className="cards-container"
       >
         {userdata.map((user, index) => (
-          <FollowCard key={index} {...user} />
+          <Box key={index} className="cards"> 
+            <FollowCard {...user} />
+          </Box>
         ))}
       </Box>
     </Box>

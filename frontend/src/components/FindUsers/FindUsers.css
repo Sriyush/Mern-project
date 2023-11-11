@@ -1,0 +1,13 @@
+.heading{
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 1040px){
+    .cards-container{
+        align-items: center;
+        flex-direction: column;
+    }
+    .cards{
+        margin-bottom: 20px;
+    }
+}

@@ -19,6 +19,11 @@ const SearchBar = ({ onSearch }) => {
       padding="0.5rem 1rem"
       height="40px"
       width="500px"
+      sx={{
+        '@media screen and (max-width: 1040px)': {
+          width: 400  ,
+        },
+      }}
     >
       <InputBase
         placeholder="Search..."
