@@ -22,6 +22,7 @@ const SearchBar = ({ onSearch }) => {
       sx={{
         '@media screen and (max-width: 1040px)': {
           width: 400  ,
+          alignItems: "center"
         },
       }}
     >

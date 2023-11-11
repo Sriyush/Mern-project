@@ -25,7 +25,7 @@ const Users = ({ darkTheme, setDarkTheme }) => {
         display="flex"
         flexDirection="column"
         alignItems="center"
-        justifyContent="space-between"
+        // justifyContent="space-between"
         as="main"
         px={5}
         py={3}
@@ -50,7 +50,12 @@ const Users = ({ darkTheme, setDarkTheme }) => {
         width={1}
         mt={5} 
         bg="muted"
-        className="cards-container"
+        sx={{
+          '@media screen and (max-width: 1040px)': {
+            alignItems: "center",
+            flexDirection: "column"
+          },
+        }}
       >
         {userdata.map((user, index) => (
           <Box key={index} className="cards"> 
