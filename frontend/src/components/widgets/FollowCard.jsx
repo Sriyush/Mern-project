@@ -27,6 +27,7 @@ const FollowCard = ({ avatarUrl, title, subtitle, posts, followers, following, d
       </div>
       <div id="actions">{description}</div>
       <div>
+        
         <button style={{ backgroundColor: '#6F38C5', borderRadius: '10px', padding: '8px 16px', color: '#fff', cursor: 'pointer' }}>Follow</button>
       </div>
     </div>

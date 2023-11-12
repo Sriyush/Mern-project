@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Navbar } from './components/Navbar/Navbar';
+import { Navbar } from './components/widgets/Navbar/Navbar';
 import HomePage from "./components/HomePage/Home";
-import ProfilePage from "./components/Profile/Profile";
-import Users from "./components/FindUsers/FindUsers";
+import ProfilePage from "./components/Screens/Profile/Profile";
+import Users from "./components/Screens/FindUsers/FindUsers";
 
 
 

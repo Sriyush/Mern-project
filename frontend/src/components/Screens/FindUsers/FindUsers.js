@@ -1,10 +1,10 @@
 // Users.js
 import React, { useState } from 'react';
-import SearchBar from '../widgets/Search';
+import SearchBar from '../../widgets/Search';
 import { Box } from "@mui/material";
-import { Navbar } from '../Navbar/Navbar';
-import FollowCard from '../widgets/FollowCard';
-import userdata from '../widgets/userdata.json'
+import { Navbar } from '../../widgets/Navbar/Navbar';
+import FollowCard from '../../widgets/FollowCard';
+import userdata from '../../widgets/userdata.json'
 import './FindUsers.css'
 const Users = ({ darkTheme, setDarkTheme }) => {
   const [setSearchTerm] = useState('');
