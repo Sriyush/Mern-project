@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
-import { Navbar } from "../widgets/Navbar/Navbar";
-import UserCard from "../widgets/UserCard";
+
+import UserCard from "../../widgets/UserCard";
+import { Navbar } from "../../widgets/Navbar/Navbar";
 const HomePage = ({ darkTheme, setDarkTheme }) => {
   const toggleTheme = () => {
     setDarkTheme(!darkTheme);
@@ -20,6 +21,9 @@ const HomePage = ({ darkTheme, setDarkTheme }) => {
       mt={10}
       bg="muted"> 
         <UserCard/>
+      </Box>
+      <Box>
+        {/* <InstagramCard/> */}
       </Box>
     </Box>
   );

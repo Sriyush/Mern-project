@@ -4,7 +4,7 @@ import SearchBar from '../../widgets/Search';
 import { Box } from "@mui/material";
 import { Navbar } from '../../widgets/Navbar/Navbar';
 import FollowCard from '../../widgets/FollowCard';
-import userdata from '../../widgets/userdata.json'
+import userdata from '../../widgets/userdata.json';
 import './FindUsers.css'
 const Users = ({ darkTheme, setDarkTheme }) => {
   const [setSearchTerm] = useState('');
