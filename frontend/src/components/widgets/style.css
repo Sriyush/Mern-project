@@ -44,17 +44,19 @@ blue{
 
 .detail-icon1 {
     display: flex;
+    color: var(--icon-color);
 }
 
 .detail-icon1 span {
     width: 20px;
     height: 20px;
-    background-color: #ddd; /* Placeholder color for detail icons */
+    color: var(--icon-color); /* Placeholder color for detail icons */
     margin-right: 5px;
 }
 
 .img1 {
-    height: 400px; /* Set a fixed height or adjust based on your design */
+    height: 350px; /* Set a fixed height or adjust based on your design */
+    width: 400px;
     background: url('https://d27jswm5an3efw.cloudfront.net/app/uploads/2019/11/photo-metadata-1.png') center/cover no-repeat; /* Add your image path */
 }
 
@@ -66,7 +68,7 @@ blue{
 .footer-icons {
     display: flex;
     align-items: center;
-    color: black;
+    color: var(--icon-color);
 }
 
 .footer-icons i {

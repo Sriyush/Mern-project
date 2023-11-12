@@ -32,8 +32,8 @@ const HomePage = ({ darkTheme, setDarkTheme }) => {
       </Box>
       <Box
       flexDirection="column"
-      mr={70}
-      mt={20}
+      // mr={70}
+      mt={10}
       alignItems="center"
       >
         {/* <UserCard/> */}

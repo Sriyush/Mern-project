@@ -1,5 +1,12 @@
 import React from 'react';
-import './style.css'
+import './style.css';
+import {
+  AiOutlineHeart,
+  AiOutlineComment,
+  AiOutlineSave,
+  AiOutlinePaperClip
+} from "react-icons/ai";
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 const PostCard = () => {
   return (
     <>
@@ -7,23 +14,21 @@ const PostCard = () => {
         <div className="profile1">
           <div className="logo1"></div>
           <div className="user-details1">
-            <p >username</p>
+            <p  >username</p>
             <p className="text-sm1">placeholder</p>
           </div>
           <div className="detail-icon1 d-flex">
-            <span></span>
-            <span></span>
-            <span></span>
+            <MoreVertIcon/>
           </div>
         </div>
         <div className="img1"></div>
         <div className="footer1">
           <div className="footer-icons">
-            <i className="far fa-heart"></i>
-            <i className="far fa-comment"></i>
-            <i className="far fa-paper-plane"></i>
+            <AiOutlineHeart style={{ fontSize: "20px", margin: "0 10px" }} />
+            <AiOutlineComment style={{ fontSize: "20px", margin: "0 10px" }} />
+            <AiOutlinePaperClip style={{ fontSize: "20px", margin: "0 10px" }} />
             <div className="right1">
-              <i className="far fa-bookmark"></i>
+            <AiOutlineSave style={{ fontSize: "20px", margin: "0 10px" }} />
             </div>
           </div>
           <div className="text-sm1 views">10,328 views</div>
