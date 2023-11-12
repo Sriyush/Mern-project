@@ -1,0 +1,95 @@
+
+.card1 {
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: var(--bg-color);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile1 {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+.text-sm1{
+    font-size: 12px;
+    color: gray;
+}
+.d-flex{
+    display: flex;
+}
+
+blue{
+    color: dodgerblue;
+}
+.logo1 {
+    width: 40px;
+    height: 40px;
+    background-color: #ddd; /* Placeholder color for logo */
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.user-details1 {
+    flex-grow: 1;
+}
+
+.user-details1 p {
+    margin: 5px 0;
+}
+
+.detail-icon1 {
+    display: flex;
+}
+
+.detail-icon1 span {
+    width: 20px;
+    height: 20px;
+    background-color: #ddd; /* Placeholder color for detail icons */
+    margin-right: 5px;
+}
+
+.img1 {
+    height: 400px; /* Set a fixed height or adjust based on your design */
+    background: url('https://d27jswm5an3efw.cloudfront.net/app/uploads/2019/11/photo-metadata-1.png') center/cover no-repeat; /* Add your image path */
+}
+
+.footer1 {
+    padding: 15px;
+    color: #000;
+}
+
+.footer-icons {
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+.footer-icons i {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.right1 {
+    margin-left: auto;
+}
+
+.views,
+.footer2 {
+    margin-top: 10px;
+}
+
+.blue {
+    color: blue;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .card1 {
+        max-width: 100%;
+    }
+}
