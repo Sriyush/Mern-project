@@ -10,7 +10,6 @@ const HomePage = ({ darkTheme, setDarkTheme }) => {
   };
   return (
     <Box
-    display="flex"
     flexDirection="row"
     sx={{
       '@media screen and (max-width: 1040px)': {
@@ -20,25 +19,25 @@ const HomePage = ({ darkTheme, setDarkTheme }) => {
     >
       <Navbar toggleTheme={toggleTheme} />
       <Box display="flex"
-      flexDirection="column"
+      // flexDirection="column"
       alignItems="flex-start"
       as="main"
       px={5}
       py={3}
-      width={1}
       mt={10}
       bg="muted"> 
         <UserCard/>
-      </Box>
-      <Box
-      flexDirection="column"
-      // mr={70}
-      mt={10}
+        <Box
+      flexDirection="column "
       alignItems="center"
+      ml={7}
       >
         {/* <UserCard/> */}
+        <PostCard mb="10px"/>
         <PostCard/>
       </Box>
+      </Box>
+      
     </Box>
   );
 };

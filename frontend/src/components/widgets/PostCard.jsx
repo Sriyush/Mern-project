@@ -3,10 +3,10 @@ import './style.css';
 import {
   AiOutlineHeart,
   AiOutlineComment,
-  AiOutlineSave,
   AiOutlinePaperClip
 } from "react-icons/ai";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
 const PostCard = () => {
   return (
     <>
@@ -28,12 +28,12 @@ const PostCard = () => {
             <AiOutlineComment style={{ fontSize: "20px", margin: "0 10px" }} />
             <AiOutlinePaperClip style={{ fontSize: "20px", margin: "0 10px" }} />
             <div className="right1">
-            <AiOutlineSave style={{ fontSize: "20px", margin: "0 10px" }} />
+            <TurnedInNotIcon/>
             </div>
           </div>
           <div className="text-sm1 views">10,328 views</div>
           <div className="text-sm1 footer2">
-            Username instagram template <span style={{ color: 'blue' }}>#template</span>
+            Doggy <span style={{ color: 'blue' }}>#template</span>
           </div>
         </div>
       </div>
