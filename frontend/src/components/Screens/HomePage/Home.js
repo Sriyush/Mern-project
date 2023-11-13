@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-
+import postdata from './../../widgets/postdata.json'
 import UserCard from "../../widgets/UserCard";
 import { Navbar } from "../../widgets/Navbar/Navbar";
 import PostCard from "../../widgets/PostCard";
@@ -8,6 +8,7 @@ const HomePage = ({ darkTheme, setDarkTheme }) => {
     setDarkTheme(!darkTheme);
     document.body.classList.toggle("dark", darkTheme);
   };
+  console.log(postdata);
   return (
     <Box
     flexDirection="row"
@@ -38,9 +39,9 @@ const HomePage = ({ darkTheme, setDarkTheme }) => {
         },
       }}
       >
-        {/* <UserCard/> */}
-        <PostCard mb="10px"/>
-        <PostCard/>
+        {postdata.map((post, index) => (
+            <PostCard key={index} data={post}/>
+          ))}
       </Box>
       </Box>
       
