@@ -96,4 +96,7 @@ blue{
     .card1 {
         max-width: 100%;
     }
+    .img1{
+        width: 330px;
+    }
 }
