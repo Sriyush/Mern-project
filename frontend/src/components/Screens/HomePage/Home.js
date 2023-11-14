@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
 import postdata from './../../widgets/postdata.json'
 import UserCard from "../../widgets/UserCard";
 import { Navbar } from "../../widgets/Navbar/Navbar";
@@ -8,7 +8,7 @@ const HomePage = ({ darkTheme, setDarkTheme }) => {
     setDarkTheme(!darkTheme);
     document.body.classList.toggle("dark", darkTheme);
   };
-  console.log(postdata);
+  const isMobile = useMediaQuery('(max-width: 1040px)')
   return (
     <Box
     flexDirection="row"
@@ -27,7 +27,7 @@ const HomePage = ({ darkTheme, setDarkTheme }) => {
       py={3}
       mt={10}
       bg="muted"> 
-        <UserCard/>
+        {!isMobile && <UserCard/>}
         <Box
       flexDirection="column "
       alignItems="center"
