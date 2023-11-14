@@ -4,7 +4,7 @@
     /* margin: 20px auto; */
     background-color: var(--bg-color);
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;

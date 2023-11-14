@@ -12,8 +12,8 @@ const ProfilePage = ({ darkTheme, setDarkTheme }) => {
     placeholder: "israel",
     imageUrl: "https://d27jswm5an3efw.cloudfront.net/app/uploads/2019/11/photo-metadata-1.png",
     views: 1000,
-    caption: "Doggy nigga",
-    hashtag: "#DeezNuts",
+    caption: "Doggy",
+    hashtag: "#react",
     profile: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
   };
   return (

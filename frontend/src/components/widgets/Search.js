@@ -3,10 +3,7 @@ import { InputBase, IconButton, Box } from '@mui/material';
 import { Search } from '@mui/icons-material';
 
 const SearchBar = ({ onSearch }) => {
-  const handleSearch = (event) => {
-    const searchTerm = event.target.value;
-    onSearch(searchTerm);
-  };
+  
 
   return (
     <Box
@@ -28,7 +25,7 @@ const SearchBar = ({ onSearch }) => {
     >
       <InputBase
         placeholder="Search..."
-        onChange={handleSearch}
+        // onChange={handleSearch}
         fullWidth
       />
       <IconButton>

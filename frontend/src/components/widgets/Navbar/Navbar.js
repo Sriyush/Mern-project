@@ -49,7 +49,7 @@ export const Navbar = () => {
   return (
     <div className={color ? "header header-bg" : "header"}>
       <Link to="/" className="logo-container">
-        <img src={Logo} alt="logo" sizes="12x12"className="logo"/>
+        <img src={Logo} alt="logo" sizes="15x15"className="logo"/>
         <h1>SOSH</h1>
       </Link>
 
