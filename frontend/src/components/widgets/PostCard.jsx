@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './style.css';
 import PropTypes from 'prop-types'; 
 import {
   AiOutlineHeart,
   AiOutlineComment,
-  AiOutlineSend
+  AiOutlineSend,
+  AiFillHeart
 } from "react-icons/ai";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
+import { TurnedIn } from '@mui/icons-material';
 
 const PostCard = ({ data }) => {
   const { username, placeholder, imageUrl, views, hashtag,caption,profile } = data;
+
+  const [isLiked, setIsLiked] = useState(false);
+  const [isSaved, setIsSaved] = useState(false);
+  const handleLike = () => {
+    setIsLiked(!isLiked);
+  };
+
+  const handleSave = () => {
+    setIsSaved(!isSaved);
+  };
 
   return (
     <>
@@ -30,11 +42,19 @@ const PostCard = ({ data }) => {
         <img src={imageUrl} alt="post" className='img1'></img>
         <div className="footer1">
           <div className="footer-icons">
-            <AiOutlineHeart style={{ fontSize: "20px", margin: "0 10px" }} />
+            {isLiked ? (
+              <AiFillHeart style={{ fontSize: "20px", margin: "0 10px", cursor: "pointer" }} onClick={handleLike} />
+            ) : (
+              <AiOutlineHeart style={{ fontSize: "20px", margin: "0 10px", cursor: "pointer" }} onClick={handleLike} />
+            )}
             <AiOutlineComment style={{ fontSize: "20px", margin: "0 10px" }} />
             <AiOutlineSend style={{ fontSize: "20px", margin: "0 10px" }} />
             <div className="right1">
-              <TurnedInNotIcon/>
+              {isSaved ? (
+                <TurnedIn style={{ fontSize: "20px", cursor: "pointer" }} onClick={handleSave} />
+              ) : (
+                <TurnedInNotIcon style={{ fontSize: "20px", cursor: "pointer" }} onClick={handleSave} />
+              )}
             </div>
           </div>
           <div className="text-sm1 views">{views} views</div>
