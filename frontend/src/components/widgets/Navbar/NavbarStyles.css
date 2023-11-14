@@ -28,7 +28,12 @@
     background-color: var(--bg-color-dark);
     color: var(--text-color-dark);
   }
-  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+   
 .header-bg {
 transition: 0.5s;
 }

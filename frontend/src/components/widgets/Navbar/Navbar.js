@@ -9,6 +9,7 @@ import {
     DarkMode,
     LightMode,
   } from "@mui/icons-material";
+  import Logo from './../../../assets/{s}.png'
 export const Navbar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
@@ -47,7 +48,8 @@ export const Navbar = () => {
 
   return (
     <div className={color ? "header header-bg" : "header"}>
-      <Link to="/">
+      <Link to="/" className="logo-container">
+        <img src={Logo} alt="logo" sizes="12x12"className="logo"/>
         <h1>SOSH</h1>
       </Link>
 

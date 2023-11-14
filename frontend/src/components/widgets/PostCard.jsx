@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {
   AiOutlineHeart,
   AiOutlineComment,
-  AiOutlinePaperClip
+  AiOutlineSend
 } from "react-icons/ai";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
@@ -32,7 +32,7 @@ const PostCard = ({ data }) => {
           <div className="footer-icons">
             <AiOutlineHeart style={{ fontSize: "20px", margin: "0 10px" }} />
             <AiOutlineComment style={{ fontSize: "20px", margin: "0 10px" }} />
-            <AiOutlinePaperClip style={{ fontSize: "20px", margin: "0 10px" }} />
+            <AiOutlineSend style={{ fontSize: "20px", margin: "0 10px" }} />
             <div className="right1">
               <TurnedInNotIcon/>
             </div>
