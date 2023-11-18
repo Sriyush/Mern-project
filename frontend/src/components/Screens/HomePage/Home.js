@@ -3,6 +3,8 @@ import postdata from './../../widgets/postdata.json'
 import UserCard from "../../widgets/UserCard";
 import { Navbar } from "../../widgets/Navbar/Navbar";
 import PostCard from "../../widgets/PostCard";
+
+
 const HomePage = ({ darkTheme, setDarkTheme }) => {
   const toggleTheme = () => {
     setDarkTheme(!darkTheme);

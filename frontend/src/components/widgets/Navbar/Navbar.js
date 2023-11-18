@@ -55,7 +55,7 @@ export const Navbar = () => {
 
       <ul className={click ? "nav-menu active" : "nav-menu"}>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/home">Home</Link>
         </li>
 
         <li>
@@ -65,6 +65,9 @@ export const Navbar = () => {
         <li>
           <Link to="/profile">Profile</Link>
         </li>
+        {/* <li>
+          <Link to="/login">Login</Link>
+        </li> */}
         <li>
         <IconButton onClick={toggleMode} class="icon">
         {mode === 'light' ? <DarkMode /> : <LightMode />}
