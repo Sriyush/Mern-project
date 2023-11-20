@@ -5,7 +5,7 @@ import axios from "axios";
 function Postbox() {
     const [thought, setThought] = useState("");
     const handlePostThought = () => {
-        const userId = localStorage.getItem("userId"); // Assuming you store the user ID in localStorage
+        const userId = localStorage.getItem("userId");
         const username = localStorage.getItem("username");
 
         if (userId && username && thought.trim() !== "") {
@@ -17,6 +17,8 @@ function Postbox() {
             })
             .then((response) => {
               console.log(response.data);
+              const postId = response.data._id;
+              localStorage.setItem('postId', postId);
               // Add any additional logic after successfully posting a thought
             })
             .catch((error) => {

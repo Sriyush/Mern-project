@@ -124,4 +124,20 @@ app.get("/getuserposts/:username", (req, res) => {
       res.status(500).json("Internal Server Error");
     });
 });
+//delete posts option
+app.delete("/deletepost/:postId", (req, res) => {
+  const postId = req.params.postId;
+  PostsModel.findByIdAndDelete(postId)
+    .then((deletedPost) => {
+      if (deletedPost) {
+        res.json({ status: "success", message: "Post deleted successfully" });
+      } else {
+        res.status(404).json({ error: "Post not found" });
+      }
+    })
+    .catch((error) => {
+      console.error("Error in deleting post:", error);
+      res.status(500).json("Internal Server Error");
+    });
+});
 //zofrax-raxtuc-1mItwe
