@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import './Postbox.css';
+import "./Postbox.css";
 // import { Avatar, Button } from "@material-ui/core";
 import axios from "axios";
 function Postbox() {
     const [thought, setThought] = useState("");
     const handlePostThought = () => {
-        const userId = localStorage.getItem("userId");
+        const userId = localStorage.getItem("userId"); // Assuming you store the user ID in localStorage
         const username = localStorage.getItem("username");
 
         if (userId && username && thought.trim() !== "") {
@@ -17,8 +17,6 @@ function Postbox() {
             })
             .then((response) => {
               console.log(response.data);
-              const postId = response.data._id;
-              localStorage.setItem('postId', postId);
               // Add any additional logic after successfully posting a thought
             })
             .catch((error) => {
@@ -49,16 +47,16 @@ function Postbox() {
                 type="text"
                 /> */}
 
-                <button
-                onClick={handlePostThought}
-                type="submit"
-                className="postButton"
-                >
-                <span>Post</span>
-                </button>
-            </form>
-        </div>
-    )
+        <button
+          onClick={handlePostThought}
+          type="submit"
+          className="postButton"
+        >
+          <span>Post</span>
+        </button>
+      </form>
+    </div>
+  );
 }
 
 export default Postbox;

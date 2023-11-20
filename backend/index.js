@@ -141,3 +141,31 @@ app.delete("/deletepost/:postId", (req, res) => {
     });
 });
 //zofrax-raxtuc-1mItwe
+
+
+// ... (existing code)
+
+// Endpoint to update user information
+app.put("/updateuserinfo/:userId", async (req, res) => {
+  const userId = req.params.userId;
+  const { description, twitter, linkedin } = req.body;
+
+  try {
+    const updatedUser = await UsersModel.findByIdAndUpdate(
+      userId,
+      { description, twitter, linkedin },
+      { new: true, useFindAndModify: false }
+    );
+
+    if (updatedUser) {
+      res.json(updatedUser);
+    } else {
+      res.status(404).json({ error: "User not found" });
+    }
+  } catch (error) {
+    console.error("Error in updating user information:", error);
+    res.status(500).json("Internal Server Error");
+  }
+});
+
+// ... (existing code)
