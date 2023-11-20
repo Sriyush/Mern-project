@@ -1,0 +1,51 @@
+.postbox {
+    padding-bottom: 10px;
+    border-bottom: 8px solid rgb(202, 199, 199);
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+  
+.postbox > form {
+    display: flex;
+    flex-direction: column;
+}
+  
+.postbox__input {
+    padding: 20px;
+    display: flex;
+}
+.inp{
+    background-color: var(--bg-color);
+    border-radius: 10px;
+}
+.postbox__input > input {
+    flex: 1;
+    margin-left: 20px;
+    font-size: 20px;
+    border: none;
+    border-color: aqua;
+}
+  
+.postbox__imageInput {
+    border: none;
+    padding: 10px;
+}
+  
+.postButton {
+    background-color: rgb(94, 50, 185) !important; /* Twitter blue color */
+    border: none !important;
+    color: #fff !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    border-radius: 9999px !important; /* Large border-radius for a rounded button */
+    padding: 10px 20px !important; /* Adjust padding for your desired button size */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add a smooth transition for background color */
+
+    /* Optional: Add box-shadow for a raised effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.postButton:hover {
+    background-color: rgb(64, 27, 138) !important; /* Darker blue on hover */
+}

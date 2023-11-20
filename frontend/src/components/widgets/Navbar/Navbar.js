@@ -48,9 +48,9 @@ export const Navbar = () => {
 
   return (
     <div className={color ? "header header-bg" : "header"}>
-      <Link to="/" className="logo-container">
+      <Link to="/home" className="logo-container">
         <img src={Logo} alt="logo" sizes="15x15"className="logo"/>
-        <h1>SOSH</h1>
+        <h2>SOSH</h2>
       </Link>
 
       <ul className={click ? "nav-menu active" : "nav-menu"}>

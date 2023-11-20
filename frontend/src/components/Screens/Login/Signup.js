@@ -8,10 +8,11 @@ function Signup() {
   const [name,setName] = useState()
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [username, setUsername] = useState();
   
   const handleSubmit = (e) =>{
     e.preventDefault()
-    axios.post('http://localhost:3001/register',{name,email,password})
+    axios.post('http://localhost:3001/register',{name,email,password,username})
     .then(result => {
       console.log(result)
       navigate("/login")
@@ -37,6 +38,19 @@ function Signup() {
             required
             onChange={(e) => {
               setName(e.target.value);
+            }}
+          />
+          <label htmlFor="username" className="block m-2">
+            Username
+          </label>
+          <input
+            className="w-full rounded-md p-1"
+            type="username"
+            id="username"
+            // value={email}
+            required
+            onChange={(e) => {
+              setUsername(e.target.value);
             }}
           />
           <label htmlFor="email" className="block m-2">

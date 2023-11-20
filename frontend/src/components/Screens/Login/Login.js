@@ -15,7 +15,9 @@ function Login() {
       .post("http://localhost:3001/login", {email, password})
       .then((result) => {
         console.log(result);
-        if(result.data === 'success'){
+        if(result.data.status === 'success'){
+          localStorage.setItem('userId', result.data.user._id);
+          localStorage.setItem('username',result.data.user.username);
           navigate('/home')
           alert(result.data)
         }else{

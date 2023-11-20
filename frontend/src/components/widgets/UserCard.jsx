@@ -1,16 +1,40 @@
+import { useEffect, useState } from "react";
 import "./../../index.css";
 import {
     AiOutlineTwitter,
     AiFillInstagram,
+    AiOutlineEdit
   } from "react-icons/ai";
+  import axios from "axios";
+
 const UserCard = () => {
+    const [userData, setUserData] = useState(null);
+
+    useEffect(() => {
+        const userId = localStorage.getItem('userId');
+
+        if (userId) {
+            // Fetch user data using the stored user ID
+            axios.get(`http://localhost:3001/getuserdata/${userId}`)
+                .then((response) => {
+                    setUserData(response.data);
+                })
+                .catch((error) => {
+                    console.error("Error fetching user data:", error);
+                });
+        }
+    }, []);
+
     const url="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
     return <div class="cardStyle">
+        <div className="editIcon">
+                <AiOutlineEdit style={{ fontSize: "20px", cursor: "pointer" }} />
+            </div>
         <div>
             <img src={url} alt="avatar" class="img" />
         </div>
-        <div id="title">Ayush Srivastava</div>
-        <div id ="subtitle">@Sriyush</div>
+        <div id="title">{userData?.name}</div>
+        <div id ="subtitle">@{userData?.username}</div>
         <div id="stats">
         <div class="posts">
             <div class="stat-num">5</div>

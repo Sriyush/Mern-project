@@ -3,6 +3,7 @@ import postdata from './../../widgets/postdata.json'
 import UserCard from "../../widgets/UserCard";
 import { Navbar } from "../../widgets/Navbar/Navbar";
 import PostCard from "../../widgets/PostCard";
+import Postbox from "../../widgets/Postbox/Postbox";
 
 
 const HomePage = ({ darkTheme, setDarkTheme }) => {
@@ -41,9 +42,8 @@ const HomePage = ({ darkTheme, setDarkTheme }) => {
         },
       }}
       >
-        {postdata.map((post, index) => (
-            <PostCard key={index} data={post}/>
-          ))}
+        <Postbox/>
+        <PostCard/>
       </Box>
       </Box>
       
