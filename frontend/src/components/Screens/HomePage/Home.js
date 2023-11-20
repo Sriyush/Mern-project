@@ -1,16 +1,29 @@
 import { Box, useMediaQuery } from "@mui/material";
-import postdata from './../../widgets/postdata.json'
 import UserCard from "../../widgets/UserCard";
 import { Navbar } from "../../widgets/Navbar/Navbar";
 import PostCard from "../../widgets/PostCard";
 import Postbox from "../../widgets/Postbox/Postbox";
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+
 
 
 const HomePage = ({ darkTheme, setDarkTheme }) => {
+  const [thoughts, setThoughts] = useState([]);
   const toggleTheme = () => {
     setDarkTheme(!darkTheme);
     document.body.classList.toggle("dark", darkTheme);
   };
+  useEffect(() => {
+    axios.get('http://localhost:3001/getthoughts')
+      .then((response) => {
+        setThoughts(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching thoughts:", error);
+      });
+  }, []);
+  console.log(thoughts); 
   const isMobile = useMediaQuery('(max-width: 1040px)')
   return (
     <Box
@@ -43,7 +56,9 @@ const HomePage = ({ darkTheme, setDarkTheme }) => {
       }}
       >
         <Postbox/>
-        <PostCard/>
+        {thoughts.map((thought) => (
+            <PostCard key={thought._id} data={thought} /> // Make sure to pass the correct prop here
+          ))}
       </Box>
       </Box>
       

@@ -10,23 +10,12 @@ import {
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
 import { TurnedIn } from '@mui/icons-material';
-import axios from 'axios';
 
-const PostCard = () => {
+const PostCard = ({data}) => {
 
   const [isLiked, setIsLiked] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
-  const [thoughts, setThoughts] = useState([]);
-
-  useEffect(() => {
-    axios.get('http://localhost:3001/getthoughts')
-      .then((response) => {
-        setThoughts(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching thoughts:", error);
-      });
-  }, []);
+  console.log(data);
 
   const handleLike = () => {
     setIsLiked(!isLiked);
@@ -38,23 +27,22 @@ const PostCard = () => {
 
   return (
     <>
-    {thoughts.map((thought) => (
-      <div key={thought._id} className="card1">
+      <div className="card1">
         <div className="profile1">
           <div className="logo1">
             <img src={profile} alt="profile" className="profile-img"></img>
           </div>
           <div className="user-details1">
-            <p>{thought.username}</p>
-            <p className="text-sm1">test</p>
+            <p>{data.username}</p>
+            <p className="text-sm1">Test</p>
           </div>
           <div className="detail-icon1 d-flex">
-            <MoreVertIcon />
+            <MoreVertIcon/>
           </div>
         </div>
         <div className="text-sm1 footer2">
-          {thought.thought} <span style={{ color: 'blue', marginLeft: "10px" }}>#test</span>
-        </div>
+            {data.thought} <span style={{ color: 'blue', marginLeft: "10px" }}>#test</span>
+          </div>
         <div className="footer1">
           <div className="footer-icons">
             {isLiked ? (
@@ -75,14 +63,14 @@ const PostCard = () => {
           <div className="text-sm1 views">10k views</div>
         </div>
       </div>
-    ))}
-  </>
+    </>
   );
 };
 
 PostCard.propTypes = {
   data: PropTypes.shape({
-    profile: PropTypes.string.isRequired
+    username: PropTypes.string.isRequired,
+    thought: PropTypes.string.isRequired,
   }).isRequired,
 };
 

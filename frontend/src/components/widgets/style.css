@@ -20,6 +20,7 @@
   }
   
   .user-details1 {
+    color: var(--text-color);
     flex: 1;
   }
   
