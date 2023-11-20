@@ -148,12 +148,12 @@ app.delete("/deletepost/:postId", (req, res) => {
 // Endpoint to update user information
 app.put("/updateuserinfo/:userId", async (req, res) => {
   const userId = req.params.userId;
-  const { description, twitter, linkedin } = req.body;
+  const { description, twitter, instagram } = req.body; // Update property name to "instagram"
 
   try {
     const updatedUser = await UsersModel.findByIdAndUpdate(
       userId,
-      { description, twitter, linkedin },
+      { description, twitter, instagram }, // Update property name to "instagram"
       { new: true, useFindAndModify: false }
     );
 
@@ -167,5 +167,6 @@ app.put("/updateuserinfo/:userId", async (req, res) => {
     res.status(500).json("Internal Server Error");
   }
 });
+
 
 // ... (existing code)

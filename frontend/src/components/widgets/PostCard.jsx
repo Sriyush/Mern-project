@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import './style.css';
 import PropTypes from 'prop-types'; 
 import {
@@ -72,7 +72,7 @@ const PostCard = ({data}) => {
           </div>
         </div>
         <div className="text-sm1 footer2">
-            {data.thought} <span style={{ color: 'blue', marginLeft: "10px" }}>#test</span>
+            {data.thought} <span style={{ color: 'blue', marginLeft: "10px" }}></span>
           </div>
         <div className="footer1">
           <div className="footer-icons">

@@ -13,8 +13,9 @@ const UserCard = () => {
   const [editedData, setEditedData] = useState({
     description: "",
     twitter: "",
-    instagram: "",
+    instagram: "", // Update property name to "instagram"
   });
+
 
   useEffect(() => {
     const userId = localStorage.getItem("userId");
@@ -69,7 +70,7 @@ const UserCard = () => {
     "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
 
   return (
-    <div className="cardStyle w-60">
+    <div className="cardStyle" style={{ width: "300px", height: "500px", marginTop:"25px"}}>
       <div className="editIcon" onClick={handleEditClick}>
         <AiOutlineEdit style={{ fontSize: "20px", cursor: "pointer" }} />
       </div>
@@ -84,7 +85,6 @@ const UserCard = () => {
         {isEditing ? (
           // Display input fields for editing
           <div>
-            <p className=" text-blue-500 font-bold ">One liner</p>
             <textarea
               placeholder="Description"
               value={editedData.description}
@@ -122,7 +122,12 @@ const UserCard = () => {
       {/* Show clickable Twitter and Instagram icons after saving */}
       {!isEditing && (
         <div>
-          <p className="text-blue-500 font-bold">Other Handles</p>
+          <div class="flex items-center">
+            <div class="flex-grow border-2 border-gray-700 mx-3"></div>
+            <span class="text-lg font-bold text-blue-500 ">Other Handles</span>
+            <div class="flex-grow border-2 border-gray-700 mx-3"></div>
+          </div>
+
           <div style={{ display: "flex", alignItems: "center" }}>
             <a
               href={userData?.twitter}
