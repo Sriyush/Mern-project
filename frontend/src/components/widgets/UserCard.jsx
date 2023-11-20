@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-// import "./../../index.css";
 import {
   AiOutlineTwitter,
   AiFillInstagram,
@@ -70,7 +69,7 @@ const UserCard = () => {
     "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
 
   return (
-    <div className="cardStyle" style={{ width: "300px", height: "500px", marginTop:"25px"}}>
+    <div className="cardStyle " style={{ width: "300px", height: "500px", marginTop:"25px"}}>
       <div className="editIcon" onClick={handleEditClick}>
         <AiOutlineEdit style={{ fontSize: "20px", cursor: "pointer" }} />
       </div>
@@ -80,7 +79,7 @@ const UserCard = () => {
       <div id="title">{userData?.name}</div>
       <div id="subtitle">@{userData?.username}</div>
       <div id="stats">{/* ... (unchanged) */}</div>
-      <p className=" text-blue-500 font-bold ">One liner</p>
+      <p className=" text-500 font-bold " style={{color:"#6F38C5"}}>One liner</p>
       <div id="actions">
         {isEditing ? (
           // Display input fields for editing
@@ -91,7 +90,7 @@ const UserCard = () => {
               onChange={(e) =>
                 setEditedData({ ...editedData, description: e.target.value })
               }
-              className="border-2 rounded-xl w-full p-1"
+              className="border-2 rounded-xl w-full p-1 fields"
             />
             <p className=" text-blue-500 font-bold ">Twitter Link</p>
             <input
@@ -101,7 +100,7 @@ const UserCard = () => {
               onChange={(e) =>
                 setEditedData({ ...editedData, twitter: e.target.value })
               }
-              className="border-2 rounded-xl w-full p-1 m-0.5"
+              className="border-2 rounded-xl w-full p-1 m-0.5 fields"
             />
             <p className=" text-blue-500 font-bold">Instagram Link</p>
             <input
@@ -111,7 +110,7 @@ const UserCard = () => {
               onChange={(e) =>
                 setEditedData({ ...editedData, instagram: e.target.value })
               }
-              className="border-2 rounded-xl w-full p-1 m-0.5"
+              className="border-2 rounded-xl w-full p-1 m-0.5 fields"
             />
           </div>
         ) : (
@@ -121,12 +120,29 @@ const UserCard = () => {
       </div>
       {/* Show clickable Twitter and Instagram icons after saving */}
       {!isEditing && (
+        
         <div>
-          <div class="flex items-center">
-            <div class="flex-grow border-2 border-gray-700 mx-3"></div>
-            <span class="text-lg font-bold text-blue-500 ">Other Handles</span>
-            <div class="flex-grow border-2 border-gray-700 mx-3"></div>
-          </div>
+            <div id="stats">
+        <div class="posts">
+            <div class="stat-num">5</div>
+            <div class="stat-type">Posts</div>
+        </div >
+        <div class="followers">
+            <div class="stat-num">1000</div>
+            <div class="stat-type">followers</div>
+        </div>
+        <div class="following">
+            <div class="stat-num">100 k</div>
+            <div class="stat-type">following</div>
+        </div>
+        </div>
+        <div style={{ display: "flex", alignItems: "center" }}>
+                <div style={{ flex: 1, backgroundColor: "#6F38C5", height: "5px" }} />
+            
+                <p style={{ margin: "0 10px" ,fontSize: "14px",fontWeight: "bold"}}>Other Social Handles</p>
+            
+                <div style={{ flex: 1, backgroundColor: "#6F38C5", height: "5px" }} />
+        </div>
 
           <div style={{ display: "flex", alignItems: "center" }}>
             <a

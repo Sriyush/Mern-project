@@ -1,0 +1,55 @@
+.main-container {
+    max-width: 400px;
+    border: 3px solid rgb(94, 50, 182);
+    border-radius: 6px;
+    padding: 8px;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    margin: 25px; 
+    transform: translateY(-50%);
+    /* margin-left: 0px; */
+  }
+  
+  h3 {
+    color: rgb(94, 50, 182);
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .trending-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .trending-item {
+    border: 1px solid rgb(94, 50, 182);
+    border-radius: 6px;
+    margin-bottom: 10px;
+    padding: 8px;
+  }
+  
+  .headline-box {
+    margin-bottom: 6px;
+  }
+  
+  .headline {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-color);
+  }
+  
+  .source-box {
+    text-align: right;
+  }
+  
+  .source {
+    font-size: 12px;
+    color: rgb(94, 50, 182);
+  }
+  
+  /* Optional: Add a subtle box shadow for a lifted effect */
+  .trending-item:hover {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  

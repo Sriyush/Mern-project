@@ -5,6 +5,7 @@ import PostCard from "../../widgets/PostCard";
 import Postbox from "../../widgets/Postbox/Postbox";
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import Whatstrending from "../../widgets/Whatstrending/Whatstrending";
 
 
 
@@ -37,7 +38,7 @@ const HomePage = ({ darkTheme, setDarkTheme }) => {
       <Navbar toggleTheme={toggleTheme} />
       <Box display="flex"
       flexDirection="row"
-      alignItems="flex-start"
+      // alignItems="flex-start"
       as="main"
       px={5}
       py={3}
@@ -47,7 +48,9 @@ const HomePage = ({ darkTheme, setDarkTheme }) => {
         <Box
       flexDirection="column "
       alignItems="center"
-      ml={7}
+      justifyContent="center"
+      
+      mx="auto"
       sx={{
         '@media screen and (max-width: 1040px)': {
           ml: 0,
@@ -60,6 +63,7 @@ const HomePage = ({ darkTheme, setDarkTheme }) => {
             <PostCard key={thought._id} data={thought} /> // Make sure to pass the correct prop here
           ))}
       </Box>
+      <Whatstrending/>
       </Box>
       
     </Box>

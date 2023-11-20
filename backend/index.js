@@ -143,8 +143,6 @@ app.delete("/deletepost/:postId", (req, res) => {
 //zofrax-raxtuc-1mItwe
 
 
-// ... (existing code)
-
 // Endpoint to update user information
 app.put("/updateuserinfo/:userId", async (req, res) => {
   const userId = req.params.userId;
@@ -168,5 +166,3 @@ app.put("/updateuserinfo/:userId", async (req, res) => {
   }
 });
 
-
-// ... (existing code)
