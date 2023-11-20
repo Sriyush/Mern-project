@@ -10,13 +10,15 @@ import {
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
 import { TurnedIn } from '@mui/icons-material';
+import { Menu, MenuItem } from '@material-ui/core';
 
 const PostCard = ({data}) => {
 
   const [isLiked, setIsLiked] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
   console.log(data);
-
+  const currentUser = localStorage.getItem("username");
   const handleLike = () => {
     setIsLiked(!isLiked);
   };
@@ -24,6 +26,35 @@ const PostCard = ({data}) => {
   const handleSave = () => {
     setIsSaved(!isSaved);
   };
+  const postId = localStorage.getItem("postId");
+  const handleMenuClick = (event) => {
+    setAnchorEl(event.currentTarget);
+    console.log(postId);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  
+    // Assuming data._id is the postId of the current post
+    const postId = data._id;
+  
+    if (currentUser === data.username && postId) {
+      // Only make the request if the user is the owner of the post
+      fetch(`http://localhost:3001/deletepost/${postId}`, {
+        method: "DELETE",
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          // You can handle the response as needed
+        })
+        .catch((error) => {
+          console.error("Error deleting post:", error);
+        });
+    }
+  };
+  
+  
 
   return (
     <>
@@ -37,7 +68,7 @@ const PostCard = ({data}) => {
             <p className="text-sm1">Test</p>
           </div>
           <div className="detail-icon1 d-flex">
-            <MoreVertIcon/>
+          <MoreVertIcon onClick={handleMenuClick} />
           </div>
         </div>
         <div className="text-sm1 footer2">
@@ -63,6 +94,17 @@ const PostCard = ({data}) => {
           <div className="text-sm1 views">10k views</div>
         </div>
       </div>
+      <Menu
+        anchorEl={anchorEl}
+        open={Boolean(anchorEl)}
+        onClose={handleMenuClose}
+      >
+        {currentUser === data.username ? (
+          <MenuItem onClick={handleMenuClose}>Delete post</MenuItem>
+        ) : (
+          <MenuItem onClick={handleMenuClose}>Report post</MenuItem>
+        )}
+      </Menu>
     </>
   );
 };
