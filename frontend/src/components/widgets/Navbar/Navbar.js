@@ -63,23 +63,23 @@ export const Navbar = () => {
 
       <ul className={click ? "nav-menu active" : "nav-menu"}>
         <li>
-          <Link to="/home">Home</Link>
+          <Link to="/home" className="hoverElement">Home</Link>
         </li>
 
         <li>
-          <Link to="/users">Find Users</Link>
+          <Link to="/users" className="hoverElement">Find Users</Link>
         </li>
 
         <li>
-          <Link to="/profile">Profile</Link>
+          <Link to="/profile" className="hoverElement">Profile</Link>
         </li>
         <li>
-          <Link to="/login" onClick={handleLogout}>
+          <Link to="/login" onClick={handleLogout} className="hoverElement">
             Logout
           </Link>
         </li>
         <li>
-          <IconButton onClick={toggleMode} class="icon">
+          <IconButton onClick={toggleMode} class="icon" >
             {mode === "light" ? <DarkMode /> : <LightMode />}
           </IconButton>
         </li>

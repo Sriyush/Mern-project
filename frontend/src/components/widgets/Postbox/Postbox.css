@@ -1,6 +1,7 @@
 .postbox {
     padding-bottom: 10px;
-    /* border-bottom: 8px solid rgb(202, 199, 199); */
+    border-color: rgb(64, 27, 138);
+    box-shadow: 0 0 5px rgb(94, 50, 185);
     padding-right: 10px;
     margin-bottom: 10px;
 }
@@ -32,22 +33,21 @@
 }
   
 .postButton {
-    background-color: rgb(94, 50, 185) !important; /* Twitter blue color */
+    background-color: rgb(94, 50, 185) !important;
     border: none !important;
     color: #fff !important;
     font-weight: bold !important;
     text-transform: uppercase !important;
-    border-radius: 9999px !important; /* Large border-radius for a rounded button */
-    padding: 10px 20px !important; /* Adjust padding for your desired button size */
+    border-radius: 9999px !important;
+    padding: 10px 20px !important;
     cursor: pointer;
     width: 500px;
     margin-left: 30px;
     margin-bottom: 10px;
-    transition: background-color 0.3s ease; /* Add a smooth transition for background color */
-    /* Optional: Add box-shadow for a raised effect */
+    transition: background-color 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .postButton:hover {
-    background-color: rgb(64, 27, 138) !important; /* Darker blue on hover */
+    background-color: rgb(64, 27, 138) !important;
 }
