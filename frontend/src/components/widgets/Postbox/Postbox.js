@@ -25,7 +25,7 @@ function Postbox() {
     }
   };
   return (
-    <div className="postbox border-2 rounded-lg">
+    <div className="postbox border-2 rounded-lg mr-16">
       <form>
         <div className="postbox__input">
           <img

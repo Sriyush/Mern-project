@@ -58,7 +58,7 @@ const PostCard = ({data}) => {
 
   return (
     <>
-      <div className="card1">
+      <div className="card1 mr-20">
         <div className="profile1">
           <div className="logo1">
             <img src={profile} alt="profile" className="profile-img"></img>
