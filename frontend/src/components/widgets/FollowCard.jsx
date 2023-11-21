@@ -11,7 +11,7 @@ const FollowCard = ({ avatarUrl, title, subtitle, posts, followers, following, d
           <img src={avatarUrl} alt="avatar" className="img" />
         </div>
         <div id="title">{title}</div>
-        <div id="subtitle">{subtitle}</div>
+        <div id="subtitle">@{subtitle}</div>
         <div id="stats">
           <div className="posts">
             <div className="stat-num">{posts}</div>

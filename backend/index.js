@@ -166,4 +166,16 @@ app.put("/updateuserinfo/:userId", async (req, res) => {
     res.status(500).json("Internal Server Error");
   }
 });
+// Endpoint to get all user data
+app.get("/getallusers", (req, res) => {
+  UsersModel.find({})
+    .then((users) => {
+      res.json(users);
+    })
+    .catch((error) => {
+      console.error("Error fetching all users:", error);
+      res.status(500).json("Internal Server Error");
+    });
+});
+
 

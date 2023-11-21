@@ -1,17 +1,28 @@
 // Users.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchBar from '../../widgets/Search';
 import { Box } from "@mui/material";
 import { Navbar } from '../../widgets/Navbar/Navbar';
 import FollowCard from '../../widgets/FollowCard';
 import userdata from '../../widgets/userdata.json';
+import axios from 'axios';
 import './FindUsers.css'
 const Users = ({ darkTheme, setDarkTheme }) => {
   const [setSearchTerm] = useState('');
   const handleSearch = (term) => {
     setSearchTerm(term);
   };
-  
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:3001/getallusers')
+      .then((response) => {
+        setUsers(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching all users:', error);
+      });
+  }, []);
 
   const toggleTheme = () => {
     setDarkTheme(!darkTheme);
@@ -44,6 +55,7 @@ const Users = ({ darkTheme, setDarkTheme }) => {
         display="flex"
         flexDirection="row"
         alignItems="flex-start"
+        flexWrap="wrap"
         as="main"
         px={5}
         py={3}
@@ -57,9 +69,21 @@ const Users = ({ darkTheme, setDarkTheme }) => {
           },
         }}
       >
-        {userdata.map((user, index) => (
-          <Box key={index} className="cards"> 
-            <FollowCard {...user} />
+        {users.map((user) => (
+          <Box
+            key={user._id}
+            width={{ xs: "100%", sm: "48%", md: "31%", lg: "23%", xl: "19%" }} // Adjust width based on screen size
+            mb={4} // Add margin between cards
+          >
+            <FollowCard
+              avatarUrl="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+              title={user.name}
+              subtitle={user.username || 'User'}
+              posts="5"
+              followers="1000"
+              following="100k"
+              description={user.description || 'No Description'}
+            />
           </Box>
         ))}
       </Box>
