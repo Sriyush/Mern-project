@@ -4,7 +4,7 @@ import SearchBar from '../../widgets/Search';
 import { Box } from "@mui/material";
 import { Navbar } from '../../widgets/Navbar/Navbar';
 import FollowCard from '../../widgets/FollowCard';
-import userdata from '../../widgets/userdata.json';
+// import userdata from '../../widgets/userdata.json';
 import axios from 'axios';
 import './FindUsers.css'
 
@@ -14,12 +14,13 @@ const Users = ({ darkTheme, setDarkTheme }) => {
   const [filteredUsers, setFilteredUsers] = useState([]);
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:3001/getallusers')
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/getallusers`)
       .then((response) => {
         setUsers(response.data);
       })
       .catch((error) => {
-        console.error('Error fetching all users:', error);
+        console.error("Error fetching all users:", error);
       });
   }, []);
   const handleSearch = (term) => {
@@ -91,7 +92,6 @@ const Users = ({ darkTheme, setDarkTheme }) => {
               followers="1000"
               following="100k"
               description={user.description || 'No Description'}
-              
             />
           </Box>
         ))}

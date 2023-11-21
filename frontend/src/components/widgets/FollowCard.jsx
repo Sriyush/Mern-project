@@ -9,7 +9,7 @@ const FollowCard = ({ avatarUrl, title, subtitle, posts, followers, following, d
   const [isFollowing , setIsfollowing] = useState(0)
 
   const handleFollow = ()=>{
-    if(isFollowing == 0){
+    if(isFollowing === 0){
       setFollow("Following");
       setColor("blue");
       setIsfollowing(1)

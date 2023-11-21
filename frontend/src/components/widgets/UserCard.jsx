@@ -21,7 +21,7 @@ const UserCard = () => {
 
     if (userId) {
       axios
-        .get(`http://localhost:3001/getuserdata/${userId}`)
+        .get(`${process.env.REACT_APP_API_URL}/getuserdata/${userId}`)
         .then((response) => {
           setUserData(response.data);
           setPostCount(response.data?.postCount || 0); // Initialize post count
@@ -43,7 +43,10 @@ const UserCard = () => {
 
   const handleSaveClick = () => {
     axios
-      .put(`http://localhost:3001/updateuserinfo/${userData._id}`, editedData)
+      .put(
+        `${process.env.REACT_APP_API_URL}/updateuserinfo/${userData._id}`,
+        editedData
+      )
       .then((response) => {
         setUserData(response.data);
         setIsEditing(false);

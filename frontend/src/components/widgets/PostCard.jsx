@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState} from 'react';
 import './style.css';
 import PropTypes from 'prop-types'; 
 import {
@@ -11,7 +11,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
 import { TurnedIn } from '@mui/icons-material';
 import { Menu, MenuItem } from '@material-ui/core';
-import axios from 'axios';
+
 const PostCard = ({data}) => {
   const [isLiked, setIsLiked] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
@@ -41,7 +41,7 @@ const PostCard = ({data}) => {
   
     if (currentUser === data.username && postId) {
       // Only make the request if the user is the owner of the post
-      fetch(`http://localhost:3001/deletepost/${postId}`, {
+      fetch(`${process.env.REACT_APP_API_URL}/deletepost/${postId}`, {
         method: "DELETE",
       })
         .then((response) => response.json())

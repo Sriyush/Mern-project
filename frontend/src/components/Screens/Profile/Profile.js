@@ -15,9 +15,10 @@ const ProfilePage = ({ darkTheme, setDarkTheme }) => {
     const username = localStorage.getItem("username");
 
     if (username) {
-      axios.get(`http://localhost:3001/getuserposts/${username}`)
+      axios
+        .get(`${process.env.REACT_APP_API_URL}/getuserposts/${username}`)
         .then((response) => {
-          console.log(response.data)
+          console.log(response.data);
           setUserPosts(response.data);
         })
         .catch((error) => {

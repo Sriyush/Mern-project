@@ -13,15 +13,15 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/login", {email, password})
+      .post(`${process.env.REACT_APP_API_URL}/login`, { email, password })
       .then((result) => {
         console.log(result);
-        if(result.data.status === 'success'){
-          localStorage.setItem('userId', result.data.user._id);
-          localStorage.setItem('username',result.data.user.username);
-          navigate('/home')
-        }else{
-          alert(result.data)
+        if (result.data.status === "success") {
+          localStorage.setItem("userId", result.data.user._id);
+          localStorage.setItem("username", result.data.user.username);
+          navigate("/home");
+        } else {
+          alert(result.data);
         }
       })
       .catch((err) => console.log(err));

@@ -16,7 +16,8 @@ const HomePage = ({ darkTheme, setDarkTheme }) => {
     document.body.classList.toggle("dark", darkTheme);
   };
   useEffect(() => {
-    axios.get('http://localhost:3001/getthoughts')
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/getthoughts`)
       .then((response) => {
         const shuffledThoughts = response.data.sort(() => Math.random() - 0.5);
         setThoughts(shuffledThoughts);

@@ -11,7 +11,7 @@ function Postbox() {
     if (userId) {
       // Fetch user data using the stored user ID
       axios
-        .get(`http://localhost:3001/getuserdata/${userId}`)
+        .get(`${process.env.REACT_APP_API_URL}/getuserdata/${userId}`)
         .then((response) => {
           const user = response.data;
           setUserDescription(user.description || ""); // Set user's description or an empty string if not available
@@ -26,11 +26,11 @@ function Postbox() {
     const username = localStorage.getItem("username");
     if (userId && username && thought.trim() !== "") {
       axios
-        .post("http://localhost:3001/postthoughts", {
+        .post(`${process.env.REACT_APP_API_URL}/postthoughts`, {
           userId: userId,
           username: username,
           thought: thought,
-          description: userDescription 
+          description: userDescription,
         })
         .then((response) => {
           console.log(response.data);
