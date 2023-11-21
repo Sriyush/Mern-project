@@ -55,7 +55,7 @@ const ProfilePage = ({ darkTheme, setDarkTheme }) => {
         <Box display="flex"
       flexDirection="column "
       alignItems="center"
-      ml={7}
+      mx="auto"
       sx={{
         '@media screen and (max-width: 1040px)': {
           ml: 0,
@@ -63,7 +63,7 @@ const ProfilePage = ({ darkTheme, setDarkTheme }) => {
         },
       }}
       >
-        <h1 style={{marginBottom:"10px" , marginTop:"10px"}}>Your Posts</h1>
+        <h1 className="text-4xl text-850 font-bold" style={{marginBottom:"10px" , marginTop:"10px"}}>Your Posts</h1>
         {userPosts.map((postData) => (
             <PostCard key={postData._id} data={postData} />
           ))}

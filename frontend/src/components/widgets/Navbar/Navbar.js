@@ -50,7 +50,7 @@ export const Navbar = () => {
     <div className={color ? "header header-bg" : "header"}>
       <Link to="/home" className="logo-container">
         <img src={Logo} alt="logo" sizes="15x15"className="logo"/>
-        <h2>SOSH</h2>
+        <h1 className="text-4xl text-850 font-bold" >SOSH</h1>
       </Link>
 
       <ul className={click ? "nav-menu active" : "nav-menu"}>

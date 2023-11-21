@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import './style.css';
 import PropTypes from 'prop-types'; 
 import {
@@ -11,9 +11,8 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
 import { TurnedIn } from '@mui/icons-material';
 import { Menu, MenuItem } from '@material-ui/core';
-
+import axios from 'axios';
 const PostCard = ({data}) => {
-
   const [isLiked, setIsLiked] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -22,6 +21,8 @@ const PostCard = ({data}) => {
   const handleLike = () => {
     setIsLiked(!isLiked);
   };
+   // The empty dependency array ensures that this effect runs only once when the component mounts
+  
   const profile="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
   const handleSave = () => {
     setIsSaved(!isSaved);
@@ -65,7 +66,7 @@ const PostCard = ({data}) => {
           </div>
           <div className="user-details1">
             <p>{data.username}</p>
-            <p className="text-sm1">Test</p>
+            <p className="text-sm1">{data.description}</p>
           </div>
           <div className="detail-icon1 d-flex">
           <MoreVertIcon onClick={handleMenuClick} />

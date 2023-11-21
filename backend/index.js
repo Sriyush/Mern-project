@@ -81,7 +81,7 @@ app.get("/getuserdata/:userId", (req, res) => {
 
 //trying to post thoughts
 app.post("/postthoughts", (req, res) => {
-  const { userId, username,thought } = req.body;
+  const { userId, username,thought,description } = req.body;
 
   // Assuming there is a "Thoughts" model, replace it with the actual model you have
   // Create a new post
@@ -89,6 +89,7 @@ app.post("/postthoughts", (req, res) => {
     userId: userId,
     username: username,
     thought: thought,
+    description: description,
   })
     .then((newThought) => {
       res.json({ status: "success", thought: newThought });

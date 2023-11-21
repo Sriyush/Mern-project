@@ -38,7 +38,7 @@ const Users = ({ darkTheme, setDarkTheme }) => {
       <Box
       className="heading"
       >
-      <h1>Top Users</h1>
+      <h1 className="text-4xl text-850 font-bold" >Top Users</h1>
       </Box>
       <Box
         display="flex"
