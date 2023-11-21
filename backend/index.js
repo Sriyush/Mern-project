@@ -8,6 +8,15 @@ app.use(express.json());
 
 app.use(cors());
 
+// can delete this if needed 
+// Example CORS setup in Express
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'your-deployed-domain.com');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+});
+
+
 const dbUrl =
   "mongodb+srv://ayush:zBjlJ3epUreo1VCA@cluster0.z5hsflh.mongodb.net/?retryWrites=true&w=majority";
 
