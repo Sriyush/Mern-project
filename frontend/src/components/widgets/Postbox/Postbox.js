@@ -21,26 +21,31 @@ function Postbox() {
         });
     }
   }, []);
-  const handlePostThought = () => {
-    const userId = localStorage.getItem("userId"); // Assuming you store the user ID in localStorage
+
+  const handlePostThought = async () => {
+    const userId = localStorage.getItem("userId");
     const username = localStorage.getItem("username");
+
     if (userId && username && thought.trim() !== "") {
-      axios
-        .post(`${process.env.REACT_APP_API_URL}/postthoughts`, {
-          userId: userId,
-          username: username,
-          thought: thought,
-          description: userDescription,
-        })
-        .then((response) => {
-          console.log(response.data);
-          // Add any additional logic after successfully posting a thought
-        })
-        .catch((error) => {
-          console.error("Error posting thought:", error);
-        });
+      try {
+        const response = await axios.post(
+          `${process.env.REACT_APP_API_URL}/postthoughts`,
+          {
+            userId: userId,
+            username: username,
+            thought: thought,
+            description: userDescription,
+          }
+        );
+
+        console.log(response.data);
+        // Add any additional logic after successfully posting a thought
+      } catch (error) {
+        console.error("Error posting thought:", error);
+      }
     }
   };
+
   return (
     <div className="postbox border-2 rounded-lg mr-16">
       <form>
