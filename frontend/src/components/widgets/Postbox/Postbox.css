@@ -40,8 +40,10 @@
     border-radius: 9999px !important; /* Large border-radius for a rounded button */
     padding: 10px 20px !important; /* Adjust padding for your desired button size */
     cursor: pointer;
+    width: 500px;
+    margin-left: 30px;
+    margin-bottom: 10px;
     transition: background-color 0.3s ease; /* Add a smooth transition for background color */
-
     /* Optional: Add box-shadow for a raised effect */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
