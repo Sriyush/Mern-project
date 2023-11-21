@@ -42,7 +42,7 @@ function Postbox() {
     }
   };
   return (
-    <div className="postbox">
+    <div className="postbox border-2 rounded-lg mr-16">
       <form>
         <div className="postbox__input">
           <img
@@ -56,7 +56,7 @@ function Postbox() {
             className="inp"
             placeholder="What's on your mind?"
             type="text"
-            style={{ width: "500px", padding:"10px"}}
+            style={{ width: "450px"}}
           />
         </div>
 
