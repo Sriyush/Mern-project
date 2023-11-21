@@ -29,7 +29,7 @@ const Whatstrending = () => {
   
 
   return (
-    <div className='main-container'>
+    <div className='main-container m-1 mr-4'>
       <h3>What's happening in the world</h3>
       <div className="trending-container">
         {trendingHeadlines.map((headline, index) => (
