@@ -59,7 +59,7 @@ const PostCard = ({data}) => {
 
   return (
     <>
-      <div className="card1 mr-20">
+      <div className="card1 mr-20" style={{minWidth:'550px', borderColor:'blueviolet', boxShadow:'0 0 3px blueviolet'}}>
         <div className="profile1">
           <div className="logo1">
             <img src={profile} alt="profile" className="profile-img"></img>
