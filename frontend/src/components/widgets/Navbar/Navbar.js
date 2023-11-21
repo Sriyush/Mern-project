@@ -13,10 +13,10 @@ import {
   import Logo from './../../../assets/{s}.png'
 export const Navbar = () => {
   const navigate = useNavigate();
-
   const handleLogout = () => {
-    alert("Do you want to continue with logging out")
-    navigate("/login");
+    localStorage.removeItem('userToken');
+    localStorage.removeItem('userId');
+    navigate("/login", { replace: true });
   };
 
   const [click, setClick] = useState(false);
