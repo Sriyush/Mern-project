@@ -20,7 +20,6 @@ function Login() {
           localStorage.setItem('userId', result.data.user._id);
           localStorage.setItem('username',result.data.user.username);
           navigate('/home')
-          alert(result.data)
         }else{
           alert(result.data)
         }
