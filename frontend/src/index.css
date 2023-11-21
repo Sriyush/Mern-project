@@ -28,7 +28,7 @@
   /* border-color: var(--text-color); */
   border-radius: 20px;
   border-width: 10px;
-  /* margin-right: 10px; */
+  margin-right: 10px;
 }
 #title{
   font-weight:700;
