@@ -1,9 +1,25 @@
 // FollowCard.js
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';  // Import PropTypes for prop type validation
 import "./../../index.css";
 
 const FollowCard = ({ avatarUrl, title, subtitle, posts, followers, following, description }) => {
+  const [follow, setFollow] = useState("follow")
+  const [color, setColor] = useState("#6F38C5");
+  const [isFollowing , setIsfollowing] = useState(0)
+
+  const handleFollow = ()=>{
+    if(isFollowing == 0){
+      setFollow("Following");
+      setColor("blue");
+      setIsfollowing(1)
+    }else{
+      setFollow("Follow");
+      setColor("#6F38C5");
+      setIsfollowing(0);
+    }
+  
+  }
   return (
     <>
       <div className="cardStyle1">
@@ -15,7 +31,7 @@ const FollowCard = ({ avatarUrl, title, subtitle, posts, followers, following, d
         <div id="stats">
           <div className="posts">
             <div className="stat-num">{posts}</div>
-            <div className="stat-type">Posts</div>
+            <div className="stat-type">Thoughts</div>
           </div>
           <div className="followers">
             <div className="stat-num">{followers}</div>
@@ -30,14 +46,15 @@ const FollowCard = ({ avatarUrl, title, subtitle, posts, followers, following, d
         <div>
           <button
             style={{
-              backgroundColor: "#6F38C5",
+              backgroundColor: color,
               borderRadius: "10px",
               padding: "8px 16px",
               color: "#fff",
               cursor: "pointer",
             }}
+            onClick={handleFollow}
           >
-            Follow
+            {follow}
           </button>
         </div>
       </div>

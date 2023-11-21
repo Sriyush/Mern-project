@@ -89,6 +89,7 @@ const Users = ({ darkTheme, setDarkTheme }) => {
               followers="1000"
               following="100k"
               description={user.description || 'No Description'}
+              
             />
           </Box>
         ))}

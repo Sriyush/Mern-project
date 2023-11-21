@@ -80,25 +80,33 @@ app.get("/getuserdata/:userId", (req, res) => {
 });
 
 //trying to post thoughts
-app.post("/postthoughts", (req, res) => {
-  const { userId, username,thought,description } = req.body;
+// Backend logic for posting thoughts
+app.post("/postthoughts", async (req, res) => {
+  const { userId, username, thought, description } = req.body;
 
-  // Assuming there is a "Thoughts" model, replace it with the actual model you have
-  // Create a new post
-  PostsModel.create({
-    userId: userId,
-    username: username,
-    thought: thought,
-    description: description,
-  })
-    .then((newThought) => {
-      res.json({ status: "success", thought: newThought });
-    })
-    .catch((error) => {
-      console.error("Error in posting thoughts:", error);
-      res.status(500).json("Internal Server Error");
+  try {
+    // Create a new post
+    const newThought = await PostsModel.create({
+      userId: userId,
+      username: username,
+      thought: thought,
+      description: description,
     });
+
+    // Increment the post count for the user
+    await UsersModel.findByIdAndUpdate(
+      userId,
+      { $inc: { postCount: 1 } }, // Increment postCount by 1
+      { useFindAndModify: false }
+    );
+
+    res.json({ status: "success", thought: newThought });
+  } catch (error) {
+    console.error("Error in posting thoughts:", error);
+    res.status(500).json("Internal Server Error");
+  }
 });
+
 
 //trying to get thoughts
 app.get("/getthoughts", (req, res) => {
@@ -125,6 +133,8 @@ app.get("/getuserposts/:username", (req, res) => {
       res.status(500).json("Internal Server Error");
     });
 });
+
+
 //delete posts option
 app.delete("/deletepost/:postId", (req, res) => {
   const postId = req.params.postId;

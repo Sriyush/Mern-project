@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   AiOutlineTwitter,
   AiFillInstagram,
@@ -12,20 +12,19 @@ const UserCard = () => {
   const [editedData, setEditedData] = useState({
     description: "",
     twitter: "",
-    instagram: "", // Update property name to "instagram"
+    instagram: "",
   });
-
+  const [postCount, setPostCount] = useState(0); // New state for post count
 
   useEffect(() => {
     const userId = localStorage.getItem("userId");
 
     if (userId) {
-      // Fetch user data using the stored user ID
       axios
         .get(`http://localhost:3001/getuserdata/${userId}`)
         .then((response) => {
           setUserData(response.data);
-          // Initialize editedData with current data
+          setPostCount(response.data?.postCount || 0); // Initialize post count
           setEditedData({
             description: response.data?.description || "",
             twitter: response.data?.twitter || "",
@@ -43,7 +42,6 @@ const UserCard = () => {
   };
 
   const handleSaveClick = () => {
-    // Make a request to update user information
     axios
       .put(`http://localhost:3001/updateuserinfo/${userData._id}`, editedData)
       .then((response) => {
@@ -57,7 +55,6 @@ const UserCard = () => {
 
   const handleCancelClick = () => {
     setIsEditing(false);
-    // Reset editedData to the current user data on cancel
     setEditedData({
       description: userData?.description || "",
       twitter: userData?.twitter || "",
@@ -69,7 +66,10 @@ const UserCard = () => {
     "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png";
 
   return (
-    <div className="cardStyle " style={{ width: "300px", height: "500px", marginTop:"25px"}}>
+    <div
+      className="cardStyle "
+      style={{ width: "300px", height: "500px", marginTop: "25px" }}
+    >
       <div className="editIcon" onClick={handleEditClick}>
         <AiOutlineEdit style={{ fontSize: "20px", cursor: "pointer" }} />
       </div>
@@ -79,7 +79,9 @@ const UserCard = () => {
       <div id="title">{userData?.name}</div>
       <div id="subtitle">@{userData?.username}</div>
       <div id="stats">{/* ... (unchanged) */}</div>
-      <p className=" text-500 font-bold " style={{color:"#6F38C5"}}>One liner</p>
+      <p className=" text-500 font-bold " style={{ color: "#6F38C5" }}>
+        One liner
+      </p>
       <div id="actions">
         {isEditing ? (
           // Display input fields for editing
@@ -120,29 +122,36 @@ const UserCard = () => {
       </div>
       {/* Show clickable Twitter and Instagram icons after saving */}
       {!isEditing && (
-        
         <div>
-            <div id="stats">
-        <div class="posts">
-            <div class="stat-num">5</div>
-            <div class="stat-type">Posts</div>
-        </div >
-        <div class="followers">
-            <div class="stat-num">1000</div>
-            <div class="stat-type">followers</div>
-        </div>
-        <div class="following">
-            <div class="stat-num">100 k</div>
-            <div class="stat-type">following</div>
-        </div>
-        </div>
-        <div style={{ display: "flex", alignItems: "center" }}>
-                <div style={{ flex: 1, backgroundColor: "#6F38C5", height: "5px" }} />
-            
-                <p style={{ margin: "0 10px" ,fontSize: "14px",fontWeight: "bold"}}>Other Social Handles</p>
-            
-                <div style={{ flex: 1, backgroundColor: "#6F38C5", height: "5px" }} />
-        </div>
+          <div id="stats">
+            <div class="posts">
+              <div class="stat-num">{postCount}</div>
+              <div class="stat-type">Thoughts</div>
+            </div>
+            <div class="followers">
+              <div class="stat-num">1000</div>
+              <div class="stat-type">followers</div>
+            </div>
+            <div class="following">
+              <div class="stat-num">100 k</div>
+              <div class="stat-type">following</div>
+            </div>
+          </div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <div
+              style={{ flex: 1, backgroundColor: "#6F38C5", height: "5px" }}
+            />
+
+            <p
+              style={{ margin: "0 10px", fontSize: "14px", fontWeight: "bold" }}
+            >
+              Other Social Handles
+            </p>
+
+            <div
+              style={{ flex: 1, backgroundColor: "#6F38C5", height: "5px" }}
+            />
+          </div>
 
           <div style={{ display: "flex", alignItems: "center" }}>
             <a
