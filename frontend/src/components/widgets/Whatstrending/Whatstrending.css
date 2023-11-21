@@ -27,6 +27,7 @@
     border-radius: 6px;
     margin-bottom: 10px;
     padding: 8px;
+    cursor: pointer;
   }
   
   .headline-box {
@@ -51,5 +52,6 @@
   /* Optional: Add a subtle box shadow for a lifted effect */
   .trending-item:hover {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    scale: 1.025;
   }
   
