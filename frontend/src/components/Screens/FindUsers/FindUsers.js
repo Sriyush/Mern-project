@@ -8,12 +8,9 @@ import userdata from '../../widgets/userdata.json';
 import axios from 'axios';
 import './FindUsers.css'
 const Users = ({ darkTheme, setDarkTheme }) => {
-  const [setSearchTerm] = useState('');
-  const handleSearch = (term) => {
-    setSearchTerm(term);
-  };
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredUsers, setFilteredUsers] = useState([]);
   const [users, setUsers] = useState([]);
-
   useEffect(() => {
     axios.get('http://localhost:3001/getallusers')
       .then((response) => {
@@ -23,6 +20,14 @@ const Users = ({ darkTheme, setDarkTheme }) => {
         console.error('Error fetching all users:', error);
       });
   }, []);
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+    // Filter users based on the search term
+    const filtered = users.filter(user => user.name.toLowerCase().includes(term.toLowerCase()));
+    setFilteredUsers(filtered);
+  };
+  const displayUsers = searchTerm ? filteredUsers : users;
+  
 
   const toggleTheme = () => {
     setDarkTheme(!darkTheme);
@@ -44,7 +49,7 @@ const Users = ({ darkTheme, setDarkTheme }) => {
         mt={10}
         bg="muted"
       >
-        <SearchBar />
+        <SearchBar onSearch={handleSearch}/>
       </Box>
       <Box
       className="heading"

@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { InputBase, IconButton, Box } from '@mui/material';
 import { Search } from '@mui/icons-material';
 
 const SearchBar = ({ onSearch }) => {
-  
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSearchClick = () => {
+    onSearch(searchTerm);
+  };
 
   return (
     <Box
@@ -25,10 +33,11 @@ const SearchBar = ({ onSearch }) => {
     >
       <InputBase
         placeholder="Search..."
-        // onChange={handleSearch}
+        value={searchTerm}
+        onChange={handleSearchChange}
         fullWidth
       />
-      <IconButton>
+      <IconButton onClick={handleSearchClick}>
         <Search />
       </IconButton>
     </Box>
