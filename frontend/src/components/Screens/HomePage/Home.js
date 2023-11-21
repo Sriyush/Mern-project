@@ -18,7 +18,8 @@ const HomePage = ({ darkTheme, setDarkTheme }) => {
   useEffect(() => {
     axios.get('http://localhost:3001/getthoughts')
       .then((response) => {
-        setThoughts(response.data);
+        const shuffledThoughts = response.data.sort(() => Math.random() - 0.5);
+        setThoughts(shuffledThoughts);
       })
       .catch((error) => {
         console.error("Error fetching thoughts:", error);
