@@ -1,16 +1,15 @@
 .main-container {
     max-width: 400px;
+    height: auto;
     border: 3px solid rgb(94, 50, 182);
     border-radius: 6px;
     padding: 8px;
     position: fixed;
     top: 50%;
     right: 0;
-    margin: 25px; 
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-right: 40px;
     transform: translateY(-50%);
-    /* margin-left: 0px; */
   }
   
   h3 {
