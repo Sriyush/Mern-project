@@ -1,7 +1,8 @@
 import "./NavbarStyles.css";
 import { React, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
+
 import {
     IconButton,
   } from "@mui/material";
@@ -11,6 +12,15 @@ import {
   } from "@mui/icons-material";
   import Logo from './../../../assets/{s}.png'
 export const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Your logout logic here
+
+    // Navigate to the login page
+    navigate("/login");
+  };
+
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const [color, setColor] = useState(false);
@@ -49,8 +59,8 @@ export const Navbar = () => {
   return (
     <div className={color ? "header header-bg" : "header"}>
       <Link to="/home" className="logo-container">
-        <img src={Logo} alt="logo" sizes="15x15"className="logo"/>
-        <h1 className="text-4xl text-850 font-bold" >SOSH</h1>
+        <img src={Logo} alt="logo" sizes="15x15" className="logo" />
+        <h2>SOSH</h2>
       </Link>
 
       <ul className={click ? "nav-menu active" : "nav-menu"}>
@@ -65,22 +75,20 @@ export const Navbar = () => {
         <li>
           <Link to="/profile">Profile</Link>
         </li>
-        {/* <li>
-          <Link to="/login">Login</Link>
-        </li> */}
         <li>
-        <IconButton onClick={toggleMode} class="icon">
-        {mode === 'light' ? <DarkMode /> : <LightMode />}
+          <Link to="/login" onClick={handleLogout}>
+            Logout
+          </Link>
+        </li>
+        <li>
+          <IconButton onClick={toggleMode} class="icon">
+            {mode === "light" ? <DarkMode /> : <LightMode />}
           </IconButton>
         </li>
       </ul>
 
       <div className="hamburger" onClick={handleClick}>
-        {click ? (
-          <FaTimes size={20} />
-        ) : (
-          <FaBars size={20} />
-        )}
+        {click ? <FaTimes size={20} /> : <FaBars size={20} />}
       </div>
     </div>
   );
