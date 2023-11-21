@@ -2,6 +2,7 @@ import { useState } from "react";
 import React from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Type from "../../widgets/Type";
 
 
 function Login() {
@@ -28,7 +29,12 @@ function Login() {
   };
 
   return (
-    <div className="flex justify-center items-center w-screen h-screen">
+    <div className="flex flex-col justify-center items-center w-screen h-screen">
+      <div className="flex flex-row text-center mb-5">
+        <h1 className="text-4xl text-teal-950 font-bold" style={{ color: "#6F38C5" }}>SOSH</h1>
+        <h1 className="text-4xl text-teal-950 font-bold"> - </h1>
+        <h1 className="text-4xl text-teal-950 font-bold"> <Type/></h1>
+      </div>
       <div className="w-1/3 h-1/2 shadow-xl bg-slate-200 rounded-xl">
         <h1 className=" text-center text-4xl text-teal-950 mt-5 font-bold">
           Login
