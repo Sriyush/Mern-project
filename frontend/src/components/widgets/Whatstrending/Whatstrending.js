@@ -7,7 +7,7 @@ const Whatstrending = () => {
 
     useEffect(() => {
         const fetchTrendingHeadlines = async () => {
-        const apiKey = '84793400c6e74aaa9dfcacebf3601666';
+        const apiKey = '${process.env.NEWS_API}';
         const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
     
         try {
