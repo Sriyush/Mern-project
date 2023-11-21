@@ -15,9 +15,7 @@ export const Navbar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Your logout logic here
-
-    // Navigate to the login page
+    alert("Do you want to continue with logging out")
     navigate("/login");
   };
 

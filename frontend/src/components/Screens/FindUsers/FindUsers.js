@@ -49,18 +49,19 @@ const Users = ({ darkTheme, setDarkTheme }) => {
       <Box
       className="heading"
       >
-      <h1 className="text-4xl text-850 font-bold" >Top Users</h1>
+      <h1 className="text-4xl text-850 font-bold text-center mt-4" >Top Users</h1>
       </Box>
       <Box
         display="flex"
         flexDirection="row"
         alignItems="flex-start"
+        justifyContent="space-between"
         flexWrap="wrap"
         as="main"
         px={5}
         py={3}
         width={1}
-        mt={5} 
+        mt={5}
         bg="muted"
         sx={{
           '@media screen and (max-width: 1040px)': {
