@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';  // Import PropTypes for prop type validatio
 import "./../../index.css";
 
 const FollowCard = ({ avatarUrl, title, subtitle, posts, followers, following, description }) => {
-  const [follow, setFollow] = useState("follow")
+  const [follow, setFollow] = useState("Follow")
   const [color, setColor] = useState("#6F38C5");
   const [isFollowing , setIsfollowing] = useState(0)
 
