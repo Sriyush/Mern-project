@@ -18,7 +18,7 @@ const FollowCard = ({ avatarUrl, title, subtitle, posts, followers, following, d
       setColor("#6F38C5");
       setIsfollowing(0);
     }
-  
+
   }
   return (
     <>

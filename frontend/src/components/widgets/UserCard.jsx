@@ -129,11 +129,11 @@ const UserCard = () => {
               <div class="stat-type">Thoughts</div>
             </div>
             <div class="followers">
-              <div class="stat-num">1000</div>
+              <div class="stat-num">0</div>
               <div class="stat-type">followers</div>
             </div>
             <div class="following">
-              <div class="stat-num">100 k</div>
+              <div class="stat-num">0</div>
               <div class="stat-type">following</div>
             </div>
           </div>
