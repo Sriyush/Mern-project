@@ -7,6 +7,8 @@ import FollowCard from '../../widgets/FollowCard';
 import userdata from '../../widgets/userdata.json';
 import axios from 'axios';
 import './FindUsers.css'
+
+
 const Users = ({ darkTheme, setDarkTheme }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredUsers, setFilteredUsers] = useState([]);
@@ -85,7 +87,7 @@ const Users = ({ darkTheme, setDarkTheme }) => {
               avatarUrl="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
               title={user.name}
               subtitle={user.username || 'User'}
-              posts="5"
+              posts={user.postCount}
               followers="1000"
               following="100k"
               description={user.description || 'No Description'}
