@@ -72,7 +72,7 @@ const PostCard = ({data}) => {
           <MoreVertIcon onClick={handleMenuClick} />
           </div>
         </div>
-        <div className="text-sm1 footer2" style={{maxWidth:'400px'}}>
+        <div className="text-sm1 footer2" style={{maxWidth:'500px'}}>
             {data.thought} <span style={{ color: 'blue', marginLeft: "10px"}}></span>
           </div>
         <div className="footer1">
