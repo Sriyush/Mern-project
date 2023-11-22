@@ -55,4 +55,11 @@
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
     scale: 1.01;
   }
+  @media screen and (max-width: 1040px) {
+    .main-container{
+      position:relative;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+    }
   

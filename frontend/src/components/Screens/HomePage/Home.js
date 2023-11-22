@@ -60,12 +60,24 @@ const HomePage = ({ darkTheme, setDarkTheme }) => {
         },
       }}
       >
-        <Postbox/>
-        {thoughts.map((thought) => (
-            <PostCard key={thought._id} data={thought} /> // Make sure to pass the correct prop here
-          ))}
+        <Postbox />
+        {isMobile ? (
+          <>
+            {thoughts.map((thought) => (
+              <PostCard key={thought._id} data={thought} />
+            ))}
+            <Whatstrending />
+          </>
+        ) : (
+          <>
+            {thoughts.map((thought) => (
+              <PostCard key={thought._id} data={thought} />
+            ))}
+            <Whatstrending />
+          </>
+        )}
       </Box>
-      <Whatstrending/>
+      {/* <Whatstrending/> */}
       </Box>
       
     </Box>
