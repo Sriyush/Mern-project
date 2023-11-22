@@ -5,28 +5,27 @@ import './Whatstrending.css';
 const Whatstrending = () => {
   const [trendingHeadlines, setTrendingHeadlines] = useState([]);
 
-    useEffect(() => {
-        const fetchTrendingHeadlines = async () => {
-        const apiKey = process.env.REACT_APP_NEWS_API;
-        const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
-    
-        try {
-            const response = await axios.get(apiUrl);
-    
-            if (response.data.articles) {
-            const shuffledHeadlines = response.data.articles.sort(() => Math.random() - 0.5);
-            setTrendingHeadlines(shuffledHeadlines.slice(0, 5));
-            } else {
-            console.error('Failed to fetch trending headlines');
-            }
-        } catch (error) {
-            console.error('Error fetching trending headlines:', error);
+  useEffect(() => {
+    const fetchTrendingHeadlines = async () => {
+      const apiKey = process.env.REACT_APP_GNEWS_API;
+      const apiUrl = `https://gnews.io/api/v4/top-headlines?category=general&lang=en&country=us&max=10&apikey=${apiKey}`;
+
+      try {
+        const response = await axios.get(apiUrl);
+
+        if (response.data.articles) {
+          const shuffledHeadlines = response.data.articles.sort(() => Math.random() - 0.5);
+          setTrendingHeadlines(shuffledHeadlines.slice(0, 5));
+        } else {
+          console.error('Failed to fetch trending headlines');
         }
-        };
-    
-        fetchTrendingHeadlines();
-    }, []);
-  
+      } catch (error) {
+        console.error('Error fetching trending headlines:', error);
+      }
+    };
+
+    fetchTrendingHeadlines();
+  }, []);
 
   return (
     <div className='main-container m-1 mr-4'>
